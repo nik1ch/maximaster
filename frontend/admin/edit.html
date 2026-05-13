@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактировать картину</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Админка</p>
+      <h1>Редактировать картину</h1>
+    </div>
+  </header>
+
+  <main class="page-content narrow">
+    <form class="form" data-form="painting">
+      <label>
+        Название
+        <input type="text" name="title" value="Звездная ночь">
+      </label>
+
+      <label>
+        Автор
+        <input type="text" name="artist" value="Винсент ван Гог">
+      </label>
+
+      <label>
+        Год
+        <input type="number" name="year" value="1889">
+      </label>
+
+      <label>
+        Описание
+        <textarea name="description" rows="5">Демонстрационная запись для HTML-прототипа.</textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="button" type="submit">Сохранить</button>
+        <a class="button secondary" href="index.html">Отмена</a>
+        <a class="button secondary" href="../index.html">В каталог</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
