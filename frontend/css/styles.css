@@ -177,6 +177,24 @@ button:hover {
     #4f8a63;
 }
 
+.preview-gold {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 42%),
+    #b98b2e;
+}
+
+.preview-rose {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 42%),
+    #b85c6a;
+}
+
+.preview-sea {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 42%),
+    #1e7f8f;
+}
+
 .painting-info {
   padding: 16px;
 }
@@ -188,6 +206,24 @@ button:hover {
 .painting-info p {
   margin: 0 0 14px;
   color: var(--muted);
+}
+
+.painting-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 9px;
+  color: var(--muted);
+  background: #eef2f7;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .actions,
@@ -220,6 +256,7 @@ label {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   padding: 10px 12px;
@@ -232,6 +269,18 @@ textarea {
 
 textarea {
   resize: vertical;
+}
+
+.empty-state {
+  padding: 28px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+.catalog-grid .empty-state {
+  grid-column: 1 / -1;
 }
 
 .details {

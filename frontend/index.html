@@ -18,39 +18,17 @@
       <div>
         <h2>Список картин</h2>
         <div class="category-list" aria-label="Категории картин">
-          <button class="category-button active" type="button">Все</button>
-          <button class="category-button" type="button">Пейзажи</button>
-          <button class="category-button" type="button">Портреты</button>
-          <button class="category-button" type="button">Натюрморты</button>
-          <button class="category-button" type="button">Морские виды</button>
+          <button class="category-button active" type="button" data-category="Все">Все</button>
+          <button class="category-button" type="button" data-category="Пейзажи">Пейзажи</button>
+          <button class="category-button" type="button" data-category="Портреты">Портреты</button>
+          <button class="category-button" type="button" data-category="Натюрморты">Натюрморты</button>
+          <button class="category-button" type="button" data-category="Морские виды">Морские виды</button>
         </div>
       </div>
       <a class="button" href="admin/index.html">Открыть админку</a>
     </section>
 
-    <section class="catalog-grid" aria-label="Картины">
-      <article class="painting-card">
-        <div class="painting-preview preview-blue"></div>
-        <div class="painting-info">
-          <h3>Звездная ночь</h3>
-          <p>Винсент ван Гог, 1889</p>
-          <div class="actions">
-            <a href="details.html?id=1">Подробнее</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="painting-card">
-        <div class="painting-preview preview-green"></div>
-        <div class="painting-info">
-          <h3>Утро в сосновом лесу</h3>
-          <p>Иван Шишкин, 1889</p>
-          <div class="actions">
-            <a href="details.html?id=2">Подробнее</a>
-          </div>
-        </div>
-      </article>
-    </section>
+    <section class="catalog-grid" aria-label="Картины" data-catalog-list></section>
   </main>
 
   <script src="js/app.js"></script>

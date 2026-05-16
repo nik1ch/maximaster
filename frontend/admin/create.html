@@ -18,22 +18,33 @@
     <form class="form" data-form="painting">
       <label>
         Название
-        <input type="text" name="title" placeholder="Например: Девятый вал">
+        <input type="text" name="title" placeholder="Например: Девятый вал" required>
       </label>
 
       <label>
         Автор
-        <input type="text" name="artist" placeholder="Например: Иван Айвазовский">
+        <input type="text" name="artist" placeholder="Например: Иван Айвазовский" required>
       </label>
 
       <label>
         Год
-        <input type="number" name="year" placeholder="1850">
+        <input type="number" name="year" placeholder="1850" required>
+      </label>
+
+      <label>
+        Категория
+        <select name="category" required>
+          <option value="">Выберите категорию</option>
+          <option value="Пейзажи">Пейзажи</option>
+          <option value="Портреты">Портреты</option>
+          <option value="Натюрморты">Натюрморты</option>
+          <option value="Морские виды">Морские виды</option>
+        </select>
       </label>
 
       <label>
         Описание
-        <textarea name="description" rows="5" placeholder="Краткое описание картины"></textarea>
+        <textarea name="description" rows="5" placeholder="Краткое описание картины" required></textarea>
       </label>
 
       <div class="form-actions">

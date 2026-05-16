@@ -15,25 +15,36 @@
   </header>
 
   <main class="page-content narrow">
-    <form class="form" data-form="painting">
+    <form class="form" data-form="painting" data-edit-form>
       <label>
         Название
-        <input type="text" name="title" value="Звездная ночь">
+        <input type="text" name="title" required>
       </label>
 
       <label>
         Автор
-        <input type="text" name="artist" value="Винсент ван Гог">
+        <input type="text" name="artist" required>
       </label>
 
       <label>
         Год
-        <input type="number" name="year" value="1889">
+        <input type="number" name="year" required>
+      </label>
+
+      <label>
+        Категория
+        <select name="category" required>
+          <option value="">Выберите категорию</option>
+          <option value="Пейзажи">Пейзажи</option>
+          <option value="Портреты">Портреты</option>
+          <option value="Натюрморты">Натюрморты</option>
+          <option value="Морские виды">Морские виды</option>
+        </select>
       </label>
 
       <label>
         Описание
-        <textarea name="description" rows="5">Демонстрационная запись для HTML-прототипа.</textarea>
+        <textarea name="description" rows="5" required></textarea>
       </label>
 
       <div class="form-actions">
