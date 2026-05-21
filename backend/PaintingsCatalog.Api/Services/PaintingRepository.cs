@@ -129,7 +129,10 @@ public sealed class PaintingRepository
             request.Description.Trim(),
             string.IsNullOrWhiteSpace(request.PreviewClass)
                 ? "preview-blue"
-                : request.PreviewClass.Trim()
+                : request.PreviewClass.Trim(),
+            string.IsNullOrWhiteSpace(request.ImageUrl)
+                ? null
+                : request.ImageUrl.Trim()
         );
     }
 

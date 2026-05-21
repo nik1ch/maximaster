@@ -47,6 +47,18 @@
         <textarea name="description" rows="5" required></textarea>
       </label>
 
+      <label>
+        Ссылка на изображение
+        <input type="url" name="imageUrl" placeholder="https://example.com/painting.jpg">
+      </label>
+
+      <label>
+        Файл изображения
+        <input type="file" name="imageFile" accept="image/*">
+      </label>
+
+      <div class="image-form-preview" data-image-preview></div>
+
       <div class="form-actions">
         <button class="button" type="submit">Сохранить</button>
         <a class="button secondary" href="index.html">Отмена</a>

@@ -7,5 +7,6 @@ public sealed record Painting(
     int Year,
     string Category,
     string Description,
-    string PreviewClass
+    string PreviewClass,
+    string? ImageUrl
 );

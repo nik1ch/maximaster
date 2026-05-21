@@ -130,6 +130,12 @@ button:hover {
   text-decoration: none;
 }
 
+.button:disabled,
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .button.secondary {
   color: var(--text);
   background: var(--surface);
@@ -156,6 +162,8 @@ button:hover {
 }
 
 .painting-preview {
+  position: relative;
+  overflow: hidden;
   min-height: 150px;
   background: #c9d8ee;
 }
@@ -193,6 +201,17 @@ button:hover {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 42%),
     #1e7f8f;
+}
+
+.painting-image {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.painting-preview.large .painting-image {
+  height: 260px;
 }
 
 .painting-info {
@@ -271,6 +290,26 @@ textarea {
   resize: vertical;
 }
 
+.image-form-preview {
+  display: none;
+  overflow: hidden;
+  min-height: 180px;
+  background: #eef2f7;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.image-form-preview.has-image {
+  display: block;
+}
+
+.image-form-preview img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
 .empty-state {
   padding: 28px;
   color: var(--muted);
@@ -314,7 +353,7 @@ textarea {
 .admin-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 680px;
+  min-width: 760px;
 }
 
 .admin-table th,
@@ -332,6 +371,22 @@ textarea {
 
 .admin-table tr:last-child td {
   border-bottom: 0;
+}
+
+.admin-thumb {
+  display: block;
+  overflow: hidden;
+  width: 56px;
+  height: 42px;
+  background: #c9d8ee;
+  border-radius: 6px;
+}
+
+.admin-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 700px) {

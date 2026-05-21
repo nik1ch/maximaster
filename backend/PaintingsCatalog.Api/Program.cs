@@ -1,7 +1,9 @@
+using Microsoft.Extensions.FileProviders;
 using PaintingsCatalog.Api.Models;
 using PaintingsCatalog.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var frontendPath = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, "..", "..", "frontend"));
 
 builder.Services.AddCors(options =>
 {
@@ -18,12 +20,36 @@ builder.Services.AddSingleton<PaintingRepository>();
 
 var app = builder.Build();
 
+if (Directory.Exists(frontendPath))
+{
+    var frontendFiles = new PhysicalFileProvider(frontendPath);
+
+    app.UseDefaultFiles(new DefaultFilesOptions
+    {
+        FileProvider = frontendFiles
+    });
+
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = frontendFiles,
+        OnPrepareResponse = context =>
+        {
+            context.Context.Response.Headers.CacheControl = "no-store";
+            context.Context.Response.Headers.Pragma = "no-cache";
+            context.Context.Response.Headers.Expires = "0";
+        }
+    });
+
+    app.MapGet("/admin", () => Results.Redirect("/admin/index.html"));
+}
+
 app.UseCors();
 
-app.MapGet("/", () => Results.Ok(new
+app.MapGet("/api", () => Results.Ok(new
 {
     Project = "Paintings Catalog API",
     Status = "Started",
+    Site = Directory.Exists(frontendPath) ? "/" : null,
     Endpoints = new[]
     {
         "GET /api/paintings",
